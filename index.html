@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Page of "Lisa: Lightweight Yet Superb Neural Speech Coding"</title>
+
+  <meta name="description" content="Demo Page for Lisa">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" href="css/fontawesome.all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="css/fontawesome.all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css?v=10">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <script type="text/javascript" src="js/modernizr.custom.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="section-title text-center center">
+      <h1 style="color:black"><strong><br><br> Lisa: Lightweight Yet Superb Neural Speech Coding</strong></h1>
+      <br><br>
+      <font color="black" size="4">Jiankai Huang
+      <font color="black" size="4">Junteng Zhang
+      <font color="black" size="4">Ming Lu
+      <font color="black" size="4">and </font>
+      <font color="black" size="4">Zhan Ma
+      <br><br>Nanjing University, Nanjing, China
+    </div>
+
+    <div class="portfolio-item">
+      <img style="border:0px solid black;" src="img/framework.png" class="img-responsive" alt="Lisa"><br><br>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p style="color:black; font-family:Sans-Serif; font-size:16px">
+          Neural speech coding has recently achieved remarkable progress at low and ultra-low bitrates, yet its efficiency remains constrained by the limited ability to learn compact representations. To address this challenge, we introduce Lisa, a lightweight neural speech codec that enhances both feature representation and quantization. First, Lisa employs a causal frequency-domain encoder–decoder equipped with Inception Residual Blocks (IRB) to capture multi-scale compact latent representations. Second, we propose Regulated Residual Vector Quantization (R-RVQ), which explicitly modulates residuals into quantization-friendly forms, enabling more effective multi-stage quantization. Experimental results demonstrate that Lisa surpasses existing neural speech codecs in coding efficiency, while retaining low complexity suitable for real-time speech communication and streaming.
+        </p>
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <hr class="fancy-hr">
+
+
+  <div class="inner">
+    <div class="section-title text-center center">
+      <p style="color:black; font-family:Sans-Serif; font-size:32px;"> Experimental Results: LibriTTS Test-Clean Reconstruction @ 16kHz Audio</p>
+    </div>
+
+    <div class="sample-group">
+      <div class="sample-chip outside">Sample 1</div>
+
+      <div class="demo-sample">
+        <div class="sample-row top">
+          <div class="play-item">
+            <div class="lbl">Ground Truth</div>
+            <audio controls>
+              <source src="rec/Ground_Truth/1580_141083_000114_000001.wav">
+            </audio>
+          </div>
+          <div class="play-item">
+            <div class="lbl">Lisa (Ours) @ 1500 bps</div>
+            <audio controls>
+              <source src="rec/Ours_1500bps/1580_141083_000114_000001.wav">
+            </audio>
+          </div>
+          <div class="play-item">
+            <div class="lbl">Lisa (Ours) @ 500 bps</div>
+            <audio controls>
+              <source src="rec/Ours_500bps/1580_141083_000114_000001.wav">
+            </audio>
+          </div>
+        </div>
+
+        <div class="sample-row compare">
+          <div class="play-item"><div class="lbl">Encodec @ 1500 bps</div><audio controls><source src="rec/Encodec/1580_141083_000114_000001.wav"></audio></div>
+          <div class="play-item"><div class="lbl">DAC @ 1500 bps</div><audio controls><source src="rec/DAC/1580_141083_000114_000001.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SpeechTokenizer @ 1500 bps</div><audio controls><source src="rec/SpeechTokenizer_1500bps/1580_141083_000114_000001.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SemantiCodec @ 1400 bps</div><audio controls><source src="rec/SemantiCodec_1400bps/1580_141083_000114_000001.wav"></audio></div>
+          <div class="play-item"><div class="lbl">FunCodec @ 1500 bps</div><audio controls><source src="rec/FunCodec_1500bps/1580_141083_000114_000001.wav"></audio></div>
+
+        </div>
+
+        <div class="sample-row compare">
+          <div class="play-item"><div class="lbl">Mimi @ 1000 bps</div><audio controls><source src="rec/Mimi/1580_141083_000114_000001.wav"></audio></div>
+          <div class="play-item"><div class="lbl">MUFFIN @ 1350 bps</div><audio controls><source src="rec/MUFFIN/1580_141083_000114_000001.wav"></audio></div>
+          <div class="play-item"><div class="lbl">FunCodec @ 500 bps</div><audio controls><source src="rec/FunCodec_500bps/1580_141083_000114_000001.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SemantiCodec @ 650 bps</div><audio controls><source src="rec/SemantiCodec_650bps/1580_141083_000114_000001.wav"></audio></div>
+          <div class="play-item"><div class="lbl">WavTokenizer @ 500 bps</div><audio controls><source src="rec/WavTokenizer_500bps/1580_141083_000114_000001.wav"></audio></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="sample-group">
+      <div class="sample-chip outside">Sample 2</div>
+
+      <div class="demo-sample">
+        <div class="sample-row top">
+          <div class="play-item">
+            <div class="lbl">Ground Truth</div>
+            <audio controls>
+              <source src="rec/Ground_Truth/3570_5695_000008_000004.wav">
+            </audio>
+          </div>
+          <div class="play-item">
+            <div class="lbl">Lisa (Ours) @ 1500 bps</div>
+            <audio controls>
+              <source src="rec/Ours_1500bps/3570_5695_000008_000004.wav">
+            </audio>
+          </div>
+          <div class="play-item">
+            <div class="lbl">Lisa (Ours) @ 500 bps</div>
+            <audio controls>
+              <source src="rec/Ours_500bps/3570_5695_000008_000004.wav">
+            </audio>
+          </div>
+        </div>
+
+        <div class="sample-row compare">
+          <div class="play-item"><div class="lbl">Encodec @ 1500 bps</div><audio controls><source src="rec/Encodec/3570_5695_000008_000004.wav"></audio></div>
+          <div class="play-item"><div class="lbl">DAC @ 1500 bps</div><audio controls><source src="rec/DAC/3570_5695_000008_000004.wav"></audio></div>
+           <div class="play-item"><div class="lbl">SpeechTokenizer @ 1500 bps</div><audio controls><source src="rec/SpeechTokenizer_1500bps/3570_5695_000008_000004.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SemantiCodec @ 1400 bps</div><audio controls><source src="rec/SemantiCodec_1400bps/3570_5695_000008_000004.wav"></audio></div>
+          <div class="play-item"><div class="lbl">FunCodec @ 1500 bps</div><audio controls><source src="rec/FunCodec_1500bps/3570_5695_000008_000004.wav"></audio></div>
+        </div>
+
+        <div class="sample-row compare">
+          <div class="play-item"><div class="lbl">Mimi @ 1000 bps</div><audio controls><source src="rec/Mimi/3570_5695_000008_000004.wav"></audio></div>
+          <div class="play-item"><div class="lbl">MUFFIN @ 1350 bps</div><audio controls><source src="rec/MUFFIN/3570_5695_000008_000004.wav"></audio></div>
+          <div class="play-item"><div class="lbl">FunCodec @ 500 bps</div><audio controls><source src="rec/FunCodec_500bps/3570_5695_000008_000004.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SemantiCodec @ 650 bps</div><audio controls><source src="rec/SemantiCodec_650bps/3570_5695_000008_000004.wav"></audio></div>
+          <div class="play-item"><div class="lbl">WavTokenizer @ 500 bps</div><audio controls><source src="rec/WavTokenizer_500bps/3570_5695_000008_000004.wav"></audio></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="sample-group">
+      <div class="sample-chip outside">Sample 3</div>
+
+      <div class="demo-sample">
+        <div class="sample-row top">
+          <div class="play-item">
+            <div class="lbl">Ground Truth</div>
+            <audio controls>
+              <source src="rec/Ground_Truth/6829_68771_000010_000009.wav">
+            </audio>
+          </div>
+          <div class="play-item">
+            <div class="lbl">Lisa (Ours) @ 1500 bps</div>
+            <audio controls>
+              <source src="rec/Ours_1500bps/6829_68771_000010_000009.wav">
+            </audio>
+          </div>
+          <div class="play-item">
+            <div class="lbl">Lisa (Ours) @ 500 bps</div>
+            <audio controls>
+              <source src="rec/Ours_500bps/6829_68771_000010_000009.wav">
+            </audio>
+          </div>
+        </div>
+        <div class="sample-row compare">
+          <div class="play-item"><div class="lbl">Encodec @ 1500 bps</div><audio controls><source src="rec/Encodec/6829_68771_000010_000009.wav"></audio></div>
+          <div class="play-item"><div class="lbl">DAC @ 1500 bps</div><audio controls><source src="rec/DAC/6829_68771_000010_000009.wav"></audio></div>
+         <div class="play-item"><div class="lbl">SpeechTokenizer @ 1500 bps</div><audio controls><source src="rec/SpeechTokenizer_1500bps/6829_68771_000010_000009.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SemantiCodec @ 1400 bps</div><audio controls><source src="rec/SemantiCodec_1400bps/6829_68771_000010_000009.wav"></audio></div>
+          <div class="play-item"><div class="lbl">FunCodec @ 1500 bps</div><audio controls><source src="rec/FunCodec_1500bps/6829_68771_000010_000009.wav"></audio></div>
+        </div>
+        <div class="sample-row compare">
+         <div class="play-item"><div class="lbl">Mimi @ 1000 bps</div><audio controls><source src="rec/Mimi/6829_68771_000010_000009.wav"></audio></div>
+          <div class="play-item"><div class="lbl">MUFFIN @ 1350 bps</div><audio controls><source src="rec/MUFFIN/6829_68771_000010_000009.wav"></audio></div>
+          <div class="play-item"><div class="lbl">FunCodec @ 500 bps</div><audio controls><source src="rec/FunCodec_500bps/6829_68771_000010_000009.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SemantiCodec @ 650 bps</div><audio controls><source src="rec/SemantiCodec_650bps/6829_68771_000010_000009.wav"></audio></div>
+          <div class="play-item"><div class="lbl">WavTokenizer @ 500 bps</div><audio controls><source src="rec/WavTokenizer_500bps/6829_68771_000010_000009.wav"></audio></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sample-group">
+      <div class="sample-chip outside">Sample 4</div>
+
+      <div class="demo-sample">
+        <div class="sample-row top">
+          <div class="play-item">
+            <div class="lbl">Ground Truth</div>
+            <audio controls>
+              <source src="rec/Ground_Truth/6930_81414_000048_000002.wav">
+            </audio>
+          </div>
+          <div class="play-item">
+            <div class="lbl">Lisa (Ours) @ 1500 bps</div>
+            <audio controls>
+              <source src="rec/Ours_1500bps/6930_81414_000048_000002.wav">
+            </audio>
+          </div>
+                    <div class="play-item">
+            <div class="lbl">Lisa (Ours) @ 500 bps</div>
+            <audio controls>
+              <source src="rec/Ours_500bps/6930_81414_000048_000002.wav">
+            </audio>
+          </div>
+        </div>
+
+        <div class="sample-row compare">
+          <div class="play-item"><div class="lbl">Encodec @ 1500 bps</div><audio controls><source src="rec/Encodec/6930_81414_000048_000002.wav"></audio></div>
+          <div class="play-item"><div class="lbl">DAC @ 1500 bps</div><audio controls><source src="rec/DAC/6930_81414_000048_000002.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SpeechTokenizer @ 1500 bps</div><audio controls><source src="rec/SpeechTokenizer_1500bps/6930_81414_000048_000002.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SemantiCodec @ 1400 bps</div><audio controls><source src="rec/SemantiCodec_1400bps/6930_81414_000048_000002.wav"></audio></div>
+          <div class="play-item"><div class="lbl">FunCodec @ 1500 bps</div><audio controls><source src="rec/FunCodec_1500bps/6930_81414_000048_000002.wav"></audio></div>
+        </div>
+
+        <div class="sample-row compare">
+          <div class="play-item"><div class="lbl">Mimi @ 1000 bps</div><audio controls><source src="rec/Mimi/6930_81414_000048_000002.wav"></audio></div>
+          <div class="play-item"><div class="lbl">MUFFIN @ 1350 bps</div><audio controls><source src="rec/MUFFIN/6930_81414_000048_000002.wav"></audio></div>
+          <div class="play-item"><div class="lbl">FunCodec @ 500 bps</div><audio controls><source src="rec/FunCodec_500bps/6930_81414_000048_000002.wav"></audio></div>
+          <div class="play-item"><div class="lbl">SemantiCodec @ 650 bps</div><audio controls><source src="rec/SemantiCodec_650bps/6930_81414_000048_000002.wav"></audio></div>
+          <div class="play-item"><div class="lbl">WavTokenizer @ 500 bps</div><audio controls><source src="rec/WavTokenizer_500bps/6930_81414_000048_000002.wav"></audio></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/nivo-lightbox.js"></script>
+  <script type="text/javascript" src="js/jquery.isotope.js"></script>
+  <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+  <script type="text/javascript" src="js/contact_me.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

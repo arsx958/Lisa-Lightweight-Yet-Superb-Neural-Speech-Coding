@@ -1,1 +1,1 @@
-# Lisa-Lightweight-Yet-Superb-Neural-Speech-Coding
+Demo for paper "Lisa: Lightweight Yet Superb Neural Speech Coding".
